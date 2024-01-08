@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Intro</title>
+    
+  </head>
+  <body>
+    <div id="root"> before loading react</div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> -->
+    <script>
+      let root = document.getElementById("root");
+      let rootElement = ReactDOM.createRoot(root);
+
+       let prop = {
+        border: '1px solid red',
+        display:'flex',
+        fontWeight:'bold',
+        fontSize:'30px',
+        margin:'60px',
+        padding:'30px',
+        backgroundColor:'#FBDED8',
+        marginRight:'70px',
+        justifyContent: 'center',
+       }
+       let child1 ={
+        border:'1px solid black',
+        margin:'20px',
+        padding:'30px',
+        backgroundColor:'red',
+        
+       }
+       let child2 ={
+        border:'1px solid black',
+        margin:'20px',
+        padding:'30px',
+        backgroundColor:'yellow'
+       } 
+       let child3 ={
+        border:'1px solid black',
+        margin:'20px',
+        padding:'30px',
+        backgroundColor:'green'
+       }
+       let child4 ={
+        border:'1px solid black',
+        margin:'20px',
+        padding:'30px',
+        backgroundColor:'purple'
+       }
+
+      let flex = React.createElement("div", { id: "parent" , style:prop}, [
+        React.createElement("div", {style:child1}, "child1"),
+        React.createElement("div", {style:child2}, "child2"),
+        React.createElement("div", {style:child3}, "child3"),
+        React.createElement("div", {style:child4}, "child4"),
+      ]);
+
+      rootElement.render(flex);
+    </script>
+  </body>
+</html>
